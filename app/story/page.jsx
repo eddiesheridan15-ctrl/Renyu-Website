@@ -95,43 +95,43 @@ export default function Story() {
 
           <div className="reveal">
             <p style={para}>
-              I grew up in Milltown, a parish of about a thousand people in the
-              west of Ireland. We had PlayStations and The Simpsons at six like
-              everyone else, but a lot of my childhood was spent outside with my
-              brother and sister: in the fields, in the forest down the road, at
-              the lake.
+              Most companies want to do something meaningful for the planet.
+              Most teams also have enough going on without another dry
+              sustainability initiative. RENYU was built for the space between
+              those two truths.
             </p>
             <p style={para}>
-              My mum used to take me to the library, and I&apos;d come home with
-              books about the Amazon, African safari animals and the natural
-              world. I wanted to be a vet, then a zoologist. David Attenborough
-              was my hero. Still is.
+              The idea came after a year spent moving through some of the
+              wildest places I&apos;d ever seen: Patagonia, the Amazon,
+              Colombia&apos;s coast, and Botswana&apos;s Mashatu reserve. It
+              made the environmental crisis feel less like an abstract issue and
+              more like something living, beautiful and fragile. You don&apos;t
+              come back from that neutral.
             </p>
             <p style={para}>
-              One Christmas, I asked for the money to go to children in Africa
-              instead of presents, then quietly panicked on Christmas Eve when I
-              realised what I&apos;d done. I was too stubborn to take it back.
-              My dad and I have talked ever since about doing something real
-              there together.
+              My background is not conservation work, and I won&apos;t pretend
+              it is. I trained as a mechanical engineer, then spent years in
+              talent and brand partnerships. What I kept coming back to was the
+              same question: how do you turn good intentions into something
+              people actually take part in?
             </p>
             <p style={para}>
-              At twenty, through my family&apos;s restaurant, we cooked proper
-              meals for homeless people in Galway every Tuesday for a year. It
-              taught me the thing RENYU is built on: business can be an engine
-              for good, and doing good consistently beats doing it once.
+              Last year, my dad and I tried to get a million trees funded in
+              Africa. We failed. Not because people didn&apos;t care, but
+              because caring isn&apos;t an engine. Goodwill on its own
+              doesn&apos;t plant anything.
             </p>
             <p style={para}>
-              Then I spent a year in South America, wild pumas in Patagonia, the
-              Amazon in Peru, plankton glowing off Cartagena, and months in
-              Botswana surrounded by more life than I knew one place could hold.
-              Everywhere, I felt the same two things: awe at how alive this
-              planet still is, and anger at what we&apos;re doing to it.
+              So I started building the engine instead. RENYU runs four-week
+              competitions inside companies: teams compete on everyday
+              sustainable actions, the company backs it with a real donation,
+              and verified projects protecting land, wildlife and water get
+              funded.
             </p>
             <p style={para}>
-              My dad and I once tried to get a million trees funded in Africa.
-              It fell through. I couldn&apos;t plant them alone, so I built
-              RENYU, so companies like yours can help fund the work: land,
-              wildlife and water.
+              The goal isn&apos;t to help companies look like they care.
+              It&apos;s to help them do something real, and bring their people
+              with them.
             </p>
             <p style={{ ...para, marginBottom: 0 }}>
               RENYU comes from <em>renew</em>. That&apos;s the whole mission:
