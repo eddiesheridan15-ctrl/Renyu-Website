@@ -21,12 +21,17 @@ export default function Story() {
     return () => io.disconnect();
   }, []);
 
-  const band = {
-    fontSize: 20,
-    lineHeight: 1.7,
+  const beat = {
+    fontSize: 17,
+    lineHeight: 1.65,
     color: "var(--ink)",
+    margin: 0,
+  };
+
+  const beatWrap = {
+    paddingBottom: 26,
     marginBottom: 26,
-    maxWidth: 680,
+    borderBottom: "1px solid rgba(0,0,0,0.08)",
   };
 
   return (
@@ -58,14 +63,14 @@ export default function Story() {
         </div>
       </nav>
 
-      {/* HERO: asymmetric split, headline + intro left, landscape photo right */}
-      <section style={{ paddingTop: 150, paddingBottom: 20 }}>
-        <div className="container" style={{ maxWidth: 1120 }}>
+      {/* HERO: headline + intro left, landscape photo right */}
+      <section style={{ paddingTop: 150, paddingBottom: 0 }}>
+        <div className="container" style={{ maxWidth: 1180 }}>
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.15fr)",
-              gap: 48,
+              gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.1fr)",
+              gap: 56,
               alignItems: "center",
             }}
             className="story-hero"
@@ -79,10 +84,10 @@ export default function Story() {
                 style={{
                   fontFamily: "var(--head)",
                   fontWeight: 600,
-                  fontSize: "clamp(34px, 5vw, 54px)",
-                  lineHeight: 1.1,
+                  fontSize: "clamp(34px, 5vw, 56px)",
+                  lineHeight: 1.05,
                   color: "var(--ink)",
-                  marginBottom: 26,
+                  marginBottom: 24,
                 }}
               >
                 Why RENYU exists
@@ -93,8 +98,8 @@ export default function Story() {
                   fontSize: 20,
                   lineHeight: 1.7,
                   color: "var(--ink)",
-                  marginBottom: 0,
-                  maxWidth: 520,
+                  margin: 0,
+                  maxWidth: 480,
                 }}
               >
                 Most companies want to do something meaningful for the planet.
@@ -122,60 +127,146 @@ export default function Story() {
         </div>
       </section>
 
-      {/* STORY BODY */}
-      <section style={{ paddingTop: 40, paddingBottom: 40 }}>
-        <div className="container" style={{ maxWidth: 880 }}>
-          <div className="reveal">
-            <p style={band}>
-              The idea came during a year spent moving through some of the most
-              naturally rich places I&apos;d ever seen: Patagonia, the Amazon,
-              Tayrona Park on Colombia&apos;s coast, and Botswana&apos;s
-              Mashatu reserve. It made the natural world feel less like an
-              abstract cause and more like something living, beautiful and
-              worth protecting, and the crisis facing it far more real.
-            </p>
-            <p style={band}>
-              My background is not conservation work. I trained as a mechanical
-              engineer, then spent years in talent and brand partnerships. I
-              liked the craft, but I didn&apos;t feel fulfilled: my passion had
-              always been the planet, I just hadn&apos;t found my way in yet.
-              The question I kept circling was a simple one. How do I spend my
-              life on the thing I actually love, and leave the world a little
-              better than I found it? How do I make the ten-year-old who
-              watched David Attenborough every week proud of where he ended up?
-            </p>
-            <p style={band}>
-              Last year, my dad and I worked with a team to try to get a
-              million trees funded for planting in Africa. It didn&apos;t
-              happen. Not because people didn&apos;t care, but because caring,
-              on its own, doesn&apos;t move fast enough or far enough. Good
-              intentions needed a structure to run on.
-            </p>
-            <p style={band}>
-              So I started building that structure instead. RENYU runs
-              four-week competitions inside companies: the company backs it
-              with a real donation, and verified projects protecting land,
-              wildlife and water get funded.
-            </p>
-            <p style={band}>
-              The goal isn&apos;t to help companies look like they care.
-              It&apos;s to help them do something real, and bring their people
-              with them.
-            </p>
-            <p style={{ ...band, marginBottom: 0 }}>
-              RENYU comes from <em>renew</em>. That&apos;s the whole mission:
-              teams come together, and the planet gets a bit of itself back.
-            </p>
-            <p
+      {/* DIVIDER */}
+      <div className="container" style={{ maxWidth: 1180 }}>
+        <div
+          className="reveal"
+          style={{
+            borderTop: "1px solid rgba(0,0,0,0.10)",
+            marginTop: 44,
+            marginBottom: 44,
+          }}
+        />
+      </div>
+
+      {/* BODY: story beats left (in order), close right */}
+      <section style={{ paddingTop: 0, paddingBottom: 40 }}>
+        <div className="container" style={{ maxWidth: 1180 }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)",
+              gap: 64,
+              alignItems: "center",
+            }}
+            className="story-body"
+          >
+            {/* LEFT: four beats in narrative order */}
+            <div className="reveal">
+              <div style={beatWrap}>
+                <p style={beat}>
+                  The idea came during a year spent moving through some of the
+                  most naturally rich places I&apos;d ever seen: Patagonia, the
+                  Amazon, Tayrona Park on Colombia&apos;s coast, and
+                  Botswana&apos;s Mashatu reserve. It made the natural world
+                  feel less like an abstract cause and more like something
+                  living, beautiful and worth protecting, and the crisis facing
+                  it far more real.
+                </p>
+              </div>
+              <div style={beatWrap}>
+                <p style={beat}>
+                  My background is not conservation work. I trained as a
+                  mechanical engineer, then spent years in talent and brand
+                  partnerships. I liked the craft, but I didn&apos;t feel
+                  fulfilled: my passion had always been the planet, I just
+                  hadn&apos;t found my way in yet. The question I kept circling
+                  was a simple one. How do I spend my life on the thing I
+                  actually love, and leave the world a little better than I
+                  found it? How do I make the ten-year-old who watched David
+                  Attenborough every week proud of where he ended up?
+                </p>
+              </div>
+              <div style={beatWrap}>
+                <p style={beat}>
+                  Last year, my dad and I worked with a team to try to get a
+                  million trees funded for planting in Africa. It didn&apos;t
+                  happen. Not because people didn&apos;t care, but because
+                  caring, on its own, doesn&apos;t move fast enough or far
+                  enough. Good intentions needed a structure to run on.
+                </p>
+              </div>
+              <div style={{ ...beatWrap, borderBottom: "none", marginBottom: 0, paddingBottom: 0 }}>
+                <p style={beat}>
+                  So I started building that structure instead. RENYU runs
+                  four-week competitions inside companies: the company backs it
+                  with a real donation, and verified projects protecting land,
+                  wildlife and water get funded.
+                </p>
+              </div>
+            </div>
+
+            {/* RIGHT: the close */}
+            <div
+              className="reveal"
               style={{
-                marginTop: 30,
-                fontFamily: "var(--head)",
-                fontWeight: 600,
-                color: "var(--green-deep)",
+                background: "rgba(0,0,0,0.02)",
+                border: "1px solid rgba(0,0,0,0.07)",
+                borderRadius: 22,
+                padding: "44px 44px 40px",
               }}
             >
-              &mdash; Eddie Sheridan, Founder
-            </p>
+              <div
+                style={{
+                  borderLeft: "3px solid var(--green)",
+                  paddingLeft: 26,
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: 17,
+                    lineHeight: 1.6,
+                    color: "var(--ink)",
+                    margin: "0 0 26px",
+                  }}
+                >
+                  The goal isn&apos;t to help companies look like they care.
+                  It&apos;s to help them do something real, and bring their
+                  people with them.
+                </p>
+                <p
+                  style={{
+                    fontFamily: "var(--head)",
+                    fontWeight: 600,
+                    fontSize: "clamp(26px, 3vw, 34px)",
+                    lineHeight: 1.25,
+                    color: "var(--green-deep)",
+                    margin: "0 0 26px",
+                  }}
+                >
+                  Teams come together, and the planet gets a bit of itself back.
+                </p>
+                <div
+                  style={{
+                    borderTop: "1px solid rgba(0,0,0,0.10)",
+                    paddingTop: 24,
+                  }}
+                >
+                  <p
+                    style={{
+                      fontSize: 16,
+                      lineHeight: 1.6,
+                      color: "var(--ink)",
+                      margin: "0 0 22px",
+                    }}
+                  >
+                    RENYU comes from <em>renew</em>. That&apos;s the whole
+                    mission: teams come together, and the planet gets a bit of
+                    itself back.
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--head)",
+                      fontWeight: 600,
+                      color: "var(--green-deep)",
+                      margin: 0,
+                    }}
+                  >
+                    &mdash; Eddie Sheridan, Founder
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -231,13 +322,15 @@ export default function Story() {
       </footer>
 
       <style>{`
-        @media (max-width: 760px) {
+        @media (max-width: 860px) {
           .story-hero {
             grid-template-columns: 1fr !important;
             gap: 28px !important;
           }
-          .story-hero img {
-            order: 2;
+          .story-hero img { order: 2; }
+          .story-body {
+            grid-template-columns: 1fr !important;
+            gap: 36px !important;
           }
         }
       `}</style>
