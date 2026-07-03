@@ -28,9 +28,19 @@ export default function Story() {
     margin: 0,
   };
 
+  const beatLabel = {
+    fontFamily: "var(--head)",
+    fontWeight: 600,
+    fontSize: 13,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    color: "var(--green)",
+    marginBottom: 10,
+  };
+
   const beatWrap = {
-    paddingBottom: 26,
-    marginBottom: 26,
+    paddingBottom: 28,
+    marginBottom: 28,
     borderBottom: "1px solid rgba(0,0,0,0.08)",
   };
 
@@ -139,7 +149,7 @@ export default function Story() {
         />
       </div>
 
-      {/* BODY: story beats left (in order), close right */}
+      {/* BODY: story beats left (labelled, in order), close right aligned to conclusion */}
       <section style={{ paddingTop: 0, paddingBottom: 40 }}>
         <div className="container" style={{ maxWidth: 1180 }}>
           <div
@@ -147,24 +157,25 @@ export default function Story() {
               display: "grid",
               gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)",
               gap: 64,
-              alignItems: "center",
+              alignItems: "end",
             }}
             className="story-body"
           >
-            {/* LEFT: four beats in narrative order */}
+            {/* LEFT: four labelled beats in narrative order */}
             <div className="reveal">
               <div style={beatWrap}>
+                <div style={beatLabel}>The spark</div>
                 <p style={beat}>
                   The idea came during a year spent moving through some of the
                   most naturally rich places I&apos;d ever seen: Patagonia, the
                   Amazon, Tayrona Park on Colombia&apos;s coast, and
                   Botswana&apos;s Mashatu reserve. It made the natural world
                   feel less like an abstract cause and more like something
-                  living, beautiful and worth protecting, and the crisis facing
-                  it far more real.
+                  living, beautiful and worth protecting.
                 </p>
               </div>
               <div style={beatWrap}>
+                <div style={beatLabel}>The question</div>
                 <p style={beat}>
                   My background is not conservation work. I trained as a
                   mechanical engineer, then spent years in talent and brand
@@ -178,15 +189,24 @@ export default function Story() {
                 </p>
               </div>
               <div style={beatWrap}>
+                <div style={beatLabel}>The failed attempt</div>
                 <p style={beat}>
                   Last year, my dad and I worked with a team to try to get a
                   million trees funded for planting in Africa. It didn&apos;t
                   happen. Not because people didn&apos;t care, but because
                   caring, on its own, doesn&apos;t move fast enough or far
-                  enough. Good intentions needed a structure to run on.
+                  enough. Good intentions need a structure.
                 </p>
               </div>
-              <div style={{ ...beatWrap, borderBottom: "none", marginBottom: 0, paddingBottom: 0 }}>
+              <div
+                style={{
+                  ...beatWrap,
+                  borderBottom: "none",
+                  marginBottom: 0,
+                  paddingBottom: 0,
+                }}
+              >
+                <div style={beatLabel}>The structure</div>
                 <p style={beat}>
                   So I started building that structure instead. RENYU runs
                   four-week competitions inside companies: the company backs it
@@ -196,7 +216,7 @@ export default function Story() {
               </div>
             </div>
 
-            {/* RIGHT: the close */}
+            {/* RIGHT: the close, bottom-aligned to sit against the conclusion */}
             <div
               className="reveal"
               style={{
@@ -234,7 +254,7 @@ export default function Story() {
                     margin: "0 0 26px",
                   }}
                 >
-                  Teams come together, and the planet gets a bit of itself back.
+                  Teams come together and the planet gets a bit of itself back.
                 </p>
                 <div
                   style={{
@@ -250,9 +270,8 @@ export default function Story() {
                       margin: "0 0 22px",
                     }}
                   >
-                    RENYU comes from <em>renew</em>. That&apos;s the whole
-                    mission: teams come together, and the planet gets a bit of
-                    itself back.
+                    RENYU comes from <em>renew</em>. That is the mission behind
+                    everything we build.
                   </p>
                   <p
                     style={{
@@ -331,6 +350,7 @@ export default function Story() {
           .story-body {
             grid-template-columns: 1fr !important;
             gap: 36px !important;
+            align-items: stretch !important;
           }
         }
       `}</style>
