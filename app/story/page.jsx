@@ -28,16 +28,6 @@ export default function Story() {
     margin: 0,
   };
 
-  const beatLabel = {
-    fontFamily: "var(--head)",
-    fontWeight: 600,
-    fontSize: 13,
-    letterSpacing: "0.08em",
-    textTransform: "uppercase",
-    color: "var(--green)",
-    marginBottom: 10,
-  };
-
   const beatWrap = {
     paddingBottom: 28,
     marginBottom: 28,
@@ -149,8 +139,8 @@ export default function Story() {
         />
       </div>
 
-      {/* BODY: story beats left (labelled, in order), close right aligned to conclusion */}
-      <section style={{ paddingTop: 0, paddingBottom: 40 }}>
+      {/* BODY: story beats left (in order), close right aligned to conclusion */}
+      <section style={{ paddingTop: 0, paddingBottom: 72 }}>
         <div className="container" style={{ maxWidth: 1180 }}>
           <div
             style={{
@@ -161,10 +151,9 @@ export default function Story() {
             }}
             className="story-body"
           >
-            {/* LEFT: four labelled beats in narrative order */}
+            {/* LEFT: four beats in narrative order, no labels */}
             <div className="reveal">
               <div style={beatWrap}>
-                <div style={beatLabel}>The spark</div>
                 <p style={beat}>
                   The idea came during a year spent moving through some of the
                   most naturally rich places I&apos;d ever seen: Patagonia, the
@@ -175,7 +164,6 @@ export default function Story() {
                 </p>
               </div>
               <div style={beatWrap}>
-                <div style={beatLabel}>The question</div>
                 <p style={beat}>
                   My background is not conservation work. I trained as a
                   mechanical engineer, then spent years in talent and brand
@@ -189,7 +177,6 @@ export default function Story() {
                 </p>
               </div>
               <div style={beatWrap}>
-                <div style={beatLabel}>The failed attempt</div>
                 <p style={beat}>
                   Last year, my dad and I worked with a team to try to get a
                   million trees funded for planting in Africa. It didn&apos;t
@@ -206,7 +193,6 @@ export default function Story() {
                   paddingBottom: 0,
                 }}
               >
-                <div style={beatLabel}>The structure</div>
                 <p style={beat}>
                   So I started building that structure instead. RENYU runs
                   four-week competitions inside companies: the company backs it
@@ -223,7 +209,7 @@ export default function Story() {
                 background: "rgba(0,0,0,0.02)",
                 border: "1px solid rgba(0,0,0,0.07)",
                 borderRadius: 22,
-                padding: "44px 44px 40px",
+                padding: "36px 44px 40px",
               }}
             >
               <div
