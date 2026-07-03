@@ -25,8 +25,8 @@ export default function Story() {
     fontSize: 20,
     lineHeight: 1.7,
     color: "var(--ink)",
-    marginBottom: 22,
-    maxWidth: 620,
+    marginBottom: 26,
+    maxWidth: 680,
   };
 
   return (
@@ -58,7 +58,7 @@ export default function Story() {
         </div>
       </nav>
 
-      {/* HERO: asymmetric split, headline + intro + pull-quote left, landscape photo right */}
+      {/* HERO: asymmetric split, headline + intro left, landscape photo right */}
       <section style={{ paddingTop: 150, paddingBottom: 20 }}>
         <div className="container" style={{ maxWidth: 1120 }}>
           <div
@@ -93,32 +93,15 @@ export default function Story() {
                   fontSize: 20,
                   lineHeight: 1.7,
                   color: "var(--ink)",
-                  marginBottom: 30,
+                  marginBottom: 0,
                   maxWidth: 520,
                 }}
               >
                 Most companies want to do something meaningful for the planet.
                 Most teams also have enough going on without another dry
                 sustainability initiative. RENYU was built for the space
-                between those two truths.
+                between those two realities.
               </p>
-              <blockquote
-                className="reveal"
-                style={{
-                  margin: 0,
-                  borderLeft: "3px solid var(--green)",
-                  paddingLeft: 22,
-                  fontFamily: "var(--head)",
-                  fontWeight: 600,
-                  fontSize: "clamp(20px, 2.4vw, 26px)",
-                  lineHeight: 1.4,
-                  color: "var(--green-deep)",
-                  maxWidth: 520,
-                }}
-              >
-                Caring isn&apos;t an engine. Goodwill on its own doesn&apos;t
-                plant anything.
-              </blockquote>
             </div>
 
             <img
@@ -139,71 +122,40 @@ export default function Story() {
         </div>
       </section>
 
-      {/* STORY BANDS */}
-      <section style={{ paddingTop: 30, paddingBottom: 20 }}>
+      {/* STORY BODY */}
+      <section style={{ paddingTop: 40, paddingBottom: 40 }}>
         <div className="container" style={{ maxWidth: 880 }}>
           <div className="reveal">
             <p style={band}>
-              The idea came after a year spent moving through some of the
-              wildest places I&apos;d ever seen: Patagonia, the Amazon,
-              Colombia&apos;s coast, and Botswana&apos;s Mashatu reserve. It
-              made the environmental crisis feel less like an abstract issue
-              and more like something living, beautiful and fragile. You
-              don&apos;t come back from that neutral.
+              The idea came during a year spent moving through some of the most
+              naturally rich places I&apos;d ever seen: Patagonia, the Amazon,
+              Tayrona Park on Colombia&apos;s coast, and Botswana&apos;s
+              Mashatu reserve. It made the natural world feel less like an
+              abstract cause and more like something living, beautiful and
+              worth protecting, and the crisis facing it far more real.
             </p>
-          </div>
-
-          <div className="reveal">
-            <p style={{ ...band, marginBottom: 0 }}>
-              My background is not conservation work, and I won&apos;t pretend
-              it is. I trained as a mechanical engineer, then spent years in
-              talent and brand partnerships. What I kept coming back to was the
-              same question: how do you turn good intentions into something
-              people actually take part in?
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FAILURE BAND: full-width dark, the low point */}
-      <section
-        className="reveal"
-        style={{
-          background: "var(--green-deep)",
-          padding: "72px 0",
-          margin: "20px 0",
-        }}
-      >
-        <div className="container" style={{ maxWidth: 880 }}>
-          <p
-            style={{
-              fontSize: "clamp(22px, 3vw, 30px)",
-              lineHeight: 1.55,
-              fontFamily: "var(--head)",
-              fontWeight: 600,
-              color: "#fff",
-              margin: 0,
-              maxWidth: 720,
-            }}
-          >
-            Last year, my dad and I tried to get a million trees funded in
-            Africa. We failed. Not because people didn&apos;t care, but because
-            caring isn&apos;t an engine. Goodwill on its own doesn&apos;t plant
-            anything.
-          </p>
-        </div>
-      </section>
-
-      {/* ENGINE + MISSION: back to cream, the lift */}
-      <section style={{ paddingTop: 20, paddingBottom: 40 }}>
-        <div className="container" style={{ maxWidth: 880 }}>
-          <div className="reveal">
             <p style={band}>
-              So I started building the engine instead. RENYU runs four-week
-              competitions inside companies: teams compete on everyday
-              sustainable actions, the company backs it with a real donation,
-              and verified projects protecting land, wildlife and water get
-              funded.
+              My background is not conservation work. I trained as a mechanical
+              engineer, then spent years in talent and brand partnerships. I
+              liked the craft, but I didn&apos;t feel fulfilled: my passion had
+              always been the planet, I just hadn&apos;t found my way in yet.
+              The question I kept circling was a simple one. How do I spend my
+              life on the thing I actually love, and leave the world a little
+              better than I found it? How do I make the ten-year-old who
+              watched David Attenborough every week proud of where he ended up?
+            </p>
+            <p style={band}>
+              Last year, my dad and I worked with a team to try to get a
+              million trees funded for planting in Africa. It didn&apos;t
+              happen. Not because people didn&apos;t care, but because caring,
+              on its own, doesn&apos;t move fast enough or far enough. Good
+              intentions needed a structure to run on.
+            </p>
+            <p style={band}>
+              So I started building that structure instead. RENYU runs
+              four-week competitions inside companies: the company backs it
+              with a real donation, and verified projects protecting land,
+              wildlife and water get funded.
             </p>
             <p style={band}>
               The goal isn&apos;t to help companies look like they care.
