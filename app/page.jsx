@@ -87,6 +87,7 @@ export default function Home() {
           <div className="nav-links">
             <a href="#how">How It Works</a>
             <a href="#impact">Impact</a>
+            <a href="/story">Our Story</a>
             <a href="#contact">Contact</a>
             <a href="#contact" className="btn">
               <span className="dot" />
@@ -107,6 +108,7 @@ export default function Home() {
         <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
           <a href="#how" onClick={() => setMenuOpen(false)}>How It Works</a>
           <a href="#impact" onClick={() => setMenuOpen(false)}>Impact</a>
+          <a href="/story" onClick={() => setMenuOpen(false)}>Our Story</a>
           <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
           <a href="#contact" className="btn" onClick={() => setMenuOpen(false)}>
             <span className="dot" />
@@ -362,6 +364,49 @@ export default function Home() {
         </div>
       </section>
 
+
+      {/* A NOTE FROM THE FOUNDER */}
+      <section id="founder" style={{ paddingTop: 8 }}>
+        <div className="container" style={{ maxWidth: 880 }}>
+          <div className="micro reveal" style={{ marginBottom: 18 }}>
+            A note from the founder
+          </div>
+          <p
+            className="lead-p reveal"
+            style={{ fontSize: 26, lineHeight: 1.55, color: "var(--ink)", maxWidth: 760 }}
+          >
+            I grew up outdoors in the west of Ireland dreaming of the Amazon and
+            the savannah. I&apos;ve now seen both, and I&apos;ve seen why they
+            need protecting. RENYU is my answer: your team competes, your
+            company gives, and real projects protecting land, wildlife and
+            water get funded.
+          </p>
+          <p
+            className="reveal"
+            style={{
+              marginTop: 22,
+              fontFamily: "var(--head)",
+              fontWeight: 600,
+              color: "var(--green-deep)",
+            }}
+          >
+            &mdash; Eddie Sheridan, Founder
+            <a
+              href="/story"
+              style={{
+                marginLeft: 18,
+                fontWeight: 600,
+                color: "var(--green)",
+                textDecoration: "underline",
+                textUnderlineOffset: 4,
+              }}
+            >
+              Read the full story
+            </a>
+          </p>
+        </div>
+      </section>
+
       <section className="closing" data-nav="dark">
         <div className="container" style={{ maxWidth: 880 }}>
           <div className="micro reveal">Founding programmes open now</div>
@@ -421,6 +466,7 @@ export default function Home() {
           <div className="foot-links">
             <a href="#how">How It Works</a>
             <a href="#impact">Impact</a>
+            <a href="/story">Our Story</a>
             <a href="#contact">Contact</a>
             <a href="#contact">Book Your Intro Call</a>
             <a href="/privacy">Privacy Policy</a>
