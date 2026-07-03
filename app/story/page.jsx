@@ -21,12 +21,12 @@ export default function Story() {
     return () => io.disconnect();
   }, []);
 
-  const para = {
+  const band = {
     fontSize: 20,
     lineHeight: 1.7,
     color: "var(--ink)",
-    marginBottom: 26,
-    maxWidth: 680,
+    marginBottom: 22,
+    maxWidth: 620,
   };
 
   return (
@@ -58,82 +58,159 @@ export default function Story() {
         </div>
       </nav>
 
-      <section style={{ paddingTop: 150, paddingBottom: 40 }}>
-        <div className="container" style={{ maxWidth: 880 }}>
-          <div className="micro reveal" style={{ marginBottom: 18 }}>
-            Our story
-          </div>
-          <h1
-            className="reveal"
+      {/* HERO: asymmetric split, headline + intro + pull-quote left, landscape photo right */}
+      <section style={{ paddingTop: 150, paddingBottom: 20 }}>
+        <div className="container" style={{ maxWidth: 1120 }}>
+          <div
             style={{
-              fontFamily: "var(--head)",
-              fontWeight: 600,
-              fontSize: "clamp(34px, 5vw, 54px)",
-              lineHeight: 1.1,
-              color: "var(--ink)",
-              marginBottom: 34,
+              display: "grid",
+              gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.15fr)",
+              gap: 48,
+              alignItems: "center",
             }}
+            className="story-hero"
           >
-            Why RENYU exists
-          </h1>
+            <div>
+              <div className="micro reveal" style={{ marginBottom: 18 }}>
+                Our story
+              </div>
+              <h1
+                className="reveal"
+                style={{
+                  fontFamily: "var(--head)",
+                  fontWeight: 600,
+                  fontSize: "clamp(34px, 5vw, 54px)",
+                  lineHeight: 1.1,
+                  color: "var(--ink)",
+                  marginBottom: 26,
+                }}
+              >
+                Why RENYU exists
+              </h1>
+              <p
+                className="reveal"
+                style={{
+                  fontSize: 20,
+                  lineHeight: 1.7,
+                  color: "var(--ink)",
+                  marginBottom: 30,
+                  maxWidth: 520,
+                }}
+              >
+                Most companies want to do something meaningful for the planet.
+                Most teams also have enough going on without another dry
+                sustainability initiative. RENYU was built for the space
+                between those two truths.
+              </p>
+              <blockquote
+                className="reveal"
+                style={{
+                  margin: 0,
+                  borderLeft: "3px solid var(--green)",
+                  paddingLeft: 22,
+                  fontFamily: "var(--head)",
+                  fontWeight: 600,
+                  fontSize: "clamp(20px, 2.4vw, 26px)",
+                  lineHeight: 1.4,
+                  color: "var(--green-deep)",
+                  maxWidth: 520,
+                }}
+              >
+                Caring isn&apos;t an engine. Goodwill on its own doesn&apos;t
+                plant anything.
+              </blockquote>
+            </div>
 
-          <img
-            src="/founder.jpg"
-            alt="Eddie Sheridan in the field"
-            className="reveal"
-            style={{
-              width: "100%",
-              maxWidth: 760,
-              borderRadius: 22,
-              marginBottom: 40,
-              display: "block",
-            }}
-            onError={(e) => {
-              e.currentTarget.style.display = "none";
-            }}
-          />
+            <img
+              src="/founder.jpg"
+              alt="Eddie Sheridan in the field"
+              className="reveal"
+              style={{
+                width: "100%",
+                borderRadius: 22,
+                display: "block",
+                objectFit: "cover",
+              }}
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+              }}
+            />
+          </div>
+        </div>
+      </section>
 
+      {/* STORY BANDS */}
+      <section style={{ paddingTop: 30, paddingBottom: 20 }}>
+        <div className="container" style={{ maxWidth: 880 }}>
           <div className="reveal">
-            <p style={para}>
-              Most companies want to do something meaningful for the planet.
-              Most teams also have enough going on without another dry
-              sustainability initiative. RENYU was built for the space between
-              those two truths.
-            </p>
-            <p style={para}>
+            <p style={band}>
               The idea came after a year spent moving through some of the
               wildest places I&apos;d ever seen: Patagonia, the Amazon,
               Colombia&apos;s coast, and Botswana&apos;s Mashatu reserve. It
-              made the environmental crisis feel less like an abstract issue and
-              more like something living, beautiful and fragile. You don&apos;t
-              come back from that neutral.
+              made the environmental crisis feel less like an abstract issue
+              and more like something living, beautiful and fragile. You
+              don&apos;t come back from that neutral.
             </p>
-            <p style={para}>
+          </div>
+
+          <div className="reveal">
+            <p style={{ ...band, marginBottom: 0 }}>
               My background is not conservation work, and I won&apos;t pretend
               it is. I trained as a mechanical engineer, then spent years in
               talent and brand partnerships. What I kept coming back to was the
               same question: how do you turn good intentions into something
               people actually take part in?
             </p>
-            <p style={para}>
-              Last year, my dad and I tried to get a million trees funded in
-              Africa. We failed. Not because people didn&apos;t care, but
-              because caring isn&apos;t an engine. Goodwill on its own
-              doesn&apos;t plant anything.
-            </p>
-            <p style={para}>
+          </div>
+        </div>
+      </section>
+
+      {/* FAILURE BAND: full-width dark, the low point */}
+      <section
+        className="reveal"
+        style={{
+          background: "var(--green-deep)",
+          padding: "72px 0",
+          margin: "20px 0",
+        }}
+      >
+        <div className="container" style={{ maxWidth: 880 }}>
+          <p
+            style={{
+              fontSize: "clamp(22px, 3vw, 30px)",
+              lineHeight: 1.55,
+              fontFamily: "var(--head)",
+              fontWeight: 600,
+              color: "#fff",
+              margin: 0,
+              maxWidth: 720,
+            }}
+          >
+            Last year, my dad and I tried to get a million trees funded in
+            Africa. We failed. Not because people didn&apos;t care, but because
+            caring isn&apos;t an engine. Goodwill on its own doesn&apos;t plant
+            anything.
+          </p>
+        </div>
+      </section>
+
+      {/* ENGINE + MISSION: back to cream, the lift */}
+      <section style={{ paddingTop: 20, paddingBottom: 40 }}>
+        <div className="container" style={{ maxWidth: 880 }}>
+          <div className="reveal">
+            <p style={band}>
               So I started building the engine instead. RENYU runs four-week
               competitions inside companies: teams compete on everyday
               sustainable actions, the company backs it with a real donation,
               and verified projects protecting land, wildlife and water get
               funded.
             </p>
-            <p style={para}>
+            <p style={band}>
               The goal isn&apos;t to help companies look like they care.
               It&apos;s to help them do something real, and bring their people
               with them.
             </p>
-            <p style={{ ...para, marginBottom: 0 }}>
+            <p style={{ ...band, marginBottom: 0 }}>
               RENYU comes from <em>renew</em>. That&apos;s the whole mission:
               teams come together, and the planet gets a bit of itself back.
             </p>
@@ -200,6 +277,18 @@ export default function Story() {
           </p>
         </div>
       </footer>
+
+      <style>{`
+        @media (max-width: 760px) {
+          .story-hero {
+            grid-template-columns: 1fr !important;
+            gap: 28px !important;
+          }
+          .story-hero img {
+            order: 2;
+          }
+        }
+      `}</style>
     </>
   );
 }
