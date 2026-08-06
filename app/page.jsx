@@ -133,9 +133,9 @@ export default function Home() {
             <div>
               <p className="lead reveal">
                 A friendly four-week competition that brings your team together,
-                turns everyday actions into real momentum, and ends with a company
-                donation to one of our charity partners.
-                Engaging for them. Effortless for you.
+                turns everyday actions into real environmental impact, and ends with a
+                company donation to one of our charity partners. Engaging for
+                them. Effortless for you.
               </p>
               <a
                 href="#contact"
@@ -252,14 +252,14 @@ export default function Home() {
             <span className="num">02</span>
             <span className="micro">Impact</span>
           </div>
-          <h2 className="reveal">Real effort. Real money. Real conservation.</h2>
+          <h2 className="reveal">Real effort. Real money. Real impact.</h2>
           <p className="lead-p reveal">
-            Every RENYU programme funds work on the ground through registered
-            charities we have chosen ourselves: reforestation, wildlife
-            conservation, and ocean and river cleanup. Each partner publishes
-            its own figures, and we show you the source and the date beside
-            every number rather than inventing our own. The donation is
-            committed from the moment you sign on. The competition
+            Every RENYU programme funds real work on the ground through
+            partners we have vetted ourselves: reforestation, wildlife
+            conservation, and ocean and river cleanup. We only work with
+            projects that have multi-year monitoring and published results, so
+            the impact you point to is real, not a logo on a website. The
+            donation is committed from the moment you sign on. The competition
             simply decides which of our partners your people send it to, and
             that single choice turns out to be the most talked-about moment of
             the whole programme.
@@ -298,7 +298,7 @@ export default function Home() {
             </div>
             <div className="v-tile">
               <h3>Published standards</h3>
-              <p>Results are certified against recognised frameworks, so the numbers stand up outside this website.</p>
+              <p>Our partners publish their own results and report them openly, so the numbers stand up outside this website.</p>
             </div>
             <div className="v-tile">
               <h3>Locked in at signing</h3>
