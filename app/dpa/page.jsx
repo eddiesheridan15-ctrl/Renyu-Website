@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function DpaPage() {
   return (
-    <LegalShell title="Data Processing Agreement" updated="13 June 2026">
+    <LegalShell title="Data Processing Agreement" updated="6 August 2026">
       <p>
         This Data Processing Agreement (&ldquo;DPA&rdquo;) forms part of the
         agreement between RENYU (&ldquo;RENYU&rdquo;, &ldquo;Processor&rdquo;)

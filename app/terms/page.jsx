@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalShell title="Terms of Service" updated="13 June 2026">
+    <LegalShell title="Terms of Service" updated="6 August 2026">
       <p>
         These Terms of Service (&ldquo;Terms&rdquo;) govern your use of the RENYU
         website, app and programmes (together, the &ldquo;Services&rdquo;)
@@ -54,7 +54,7 @@ export default function TermsPage() {
       <p>
         The donation amount is committed by the participating organisation as set
         out in the Order, and is committed from the point the Order is signed.
-        The competition determines which of RENYU&rsquo;s vetted partners
+        The competition determines which of RENYU&rsquo;s registered charity partners
         receives the donation; it does not determine whether the donation is made.
         Donations are directed to the chosen partner in accordance with our
         partner arrangements. RENYU is a commercial provider, not a charity.

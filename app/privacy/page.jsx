@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalShell title="Privacy Policy" updated="13 June 2026">
+    <LegalShell title="Privacy Policy" updated="6 August 2026">
       <p>
         This Privacy Policy explains how RENYU (&ldquo;RENYU&rdquo;,
         &ldquo;we&rdquo;, &ldquo;us&rdquo; or &ldquo;our&rdquo;) collects, uses,
@@ -102,7 +102,7 @@ export default function PrivacyPage() {
       <p>
         Donations made through a RENYU programme are committed by the
         participating organisation and directed to one of our vetted
-        environmental partners. We share only the information necessary to
+        registered charity partners. We share only the information necessary to
         administer and acknowledge the donation. We do not sell personal data to
         partners, and partners may not use any data we share for their own
         marketing without a separate lawful basis and your awareness.
@@ -121,7 +121,7 @@ export default function PrivacyPage() {
           of running the programme.
         </li>
         <li>
-          <strong>Environmental partners</strong>, limited to what is needed to
+          <strong>Charity partners</strong>, limited to what is needed to
           administer the donation.
         </li>
         <li>
