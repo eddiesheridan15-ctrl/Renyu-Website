@@ -53,7 +53,7 @@ export default function TermsPage() {
       <h2>3. The donation</h2>
       <p>
         The donation amount is committed by the participating organisation as set
-        out in the Order, and is committed from the point the Order is signed.
+        out in the Order, and is binding from the point the Order is signed.
         The competition determines which of RENYU&rsquo;s registered charity partners
         receives the donation; it does not determine whether the donation is made.
         Donations are directed to the chosen partner in accordance with our

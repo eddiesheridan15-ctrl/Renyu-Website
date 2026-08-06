@@ -102,7 +102,7 @@ export default function PrivacyPage() {
       <p>
         Donations made through a RENYU programme are committed by the
         participating organisation and directed to one of our vetted
-        registered charity partners. We share only the information necessary to
+        charity partners. We share only the information necessary to
         administer and acknowledge the donation. We do not sell personal data to
         partners, and partners may not use any data we share for their own
         marketing without a separate lawful basis and your awareness.
