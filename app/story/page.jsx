@@ -196,8 +196,8 @@ export default function Story() {
                 <p style={beat}>
                   So I started building that structure instead. RENYU runs
                   four-week competitions inside companies: the company backs it
-                  with a real donation, and verified projects protecting land,
-                  wildlife and water get funded.
+                  with a real donation, and charities protecting land, wildlife and
+                  water get funded.
                 </p>
               </div>
             </div>
@@ -281,7 +281,7 @@ export default function Story() {
           <h2 className="reveal">Want your company to be part of it?</h2>
           <p className="lead-p reveal">
             A four-week competition your team will actually enjoy, and a real
-            donation to a verified project at the end of it.
+            donation to a registered charity at the end of it.
           </p>
           <a
             href="/#contact"
@@ -321,7 +321,7 @@ export default function Story() {
             <a href="/dpa">Data Processing Agreement</a>
           </div>
           <p className="tg">
-            Renyu. Bring your team together. Leave the planet better.
+            RENYU. Bring your team together. Leave the planet better.
           </p>
         </div>
       </footer>

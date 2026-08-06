@@ -25,7 +25,7 @@ export default function LegalShell({ title, updated, children }) {
 
       <footer className="legal-foot">
         <p>
-          Renyu. Bring your team together. Leave the planet better.
+          RENYU. Bring your team together. Leave the planet better.
         </p>
         <p>
           <a href="/privacy">Privacy Policy</a>

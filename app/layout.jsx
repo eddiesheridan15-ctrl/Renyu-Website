@@ -4,7 +4,7 @@ export const metadata = {
   metadataBase: new URL("https://renyu.co.uk"),
   title: "RENYU, Bring your team together. Leave the planet better.",
   description:
-    "A friendly four-week team competition that turns everyday actions into real environmental impact, and ends with a guaranteed donation to a verified conservation project.",
+    "A friendly four-week team competition that turns everyday actions into a company donation, committed before the competition begins and directed by the winning team.",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
@@ -13,7 +13,7 @@ export const metadata = {
   openGraph: {
     title: "RENYU, Bring your team together. Leave the planet better.",
     description:
-      "A four-week team competition that turns everyday actions into real environmental impact, ending with a guaranteed donation to a verified conservation project.",
+      "A four-week team competition that turns everyday actions into a company donation, committed up front and directed by the winning team.",
     url: "https://renyu.co.uk",
     siteName: "RENYU",
     type: "website",
@@ -22,7 +22,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "RENYU, Bring your team together. Leave the planet better.",
     description:
-      "A four-week team competition that turns everyday actions into real environmental impact.",
+      "A four-week team competition that ends with a company donation to conservation.",
   },
 };
 

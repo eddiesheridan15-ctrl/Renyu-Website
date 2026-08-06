@@ -36,11 +36,21 @@ You do not need one to go live.
 
 ## Things to swap in
 
-- App screens: replace the placeholder files in `public/screens/` with your real PNG
+- App screens: replace the placeholder files in `public/screens/` with real PNG
   exports of the nine screens (keep the same filenames, or change them to .png and update
   the list at the top of `components/AppCarousel.jsx`).
-- Logo: the "S" mark is hand-built SVG in `components/RENYULogo.jsx`. Tweak colours/shape
-  there if you want it closer to the app icon.
+- Favicon: `public/favicon.png` is the live icon referenced in `app/layout.jsx`.
+  `public/favicon.svg` is an unused leftover carrying the old "S" mark and should be
+  replaced with the RENYU ring or deleted.
 - Fonts: headline = Poppins, body = Mulish (closest free matches). Change in
   `app/layout.jsx` if you settle on the exact licensed fonts later.
-- Privacy Policy / Terms links currently point to "#". Wire them up when those pages exist.
+
+## Legal pages
+
+`/privacy`, `/terms` and `/dpa` are live and linked from the site footer and from the
+app's signup screen. They name RENYU Ltd (company 17324856) as the contracting entity.
+
+Outstanding for solicitor review: donation handling and the VAT split, DPA section 7
+security measures against the actual infrastructure, and a section covering the app's
+post reporting feature, where reporters are anonymous to everyone except the company
+admin.

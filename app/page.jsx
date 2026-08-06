@@ -133,8 +133,8 @@ export default function Home() {
             <div>
               <p className="lead reveal">
                 A friendly four-week competition that brings your team together,
-                turns everyday actions into real environmental impact, and ends
-                with a guaranteed donation to a verified conservation project.
+                turns everyday actions into real momentum, and ends with a company
+                donation to one of our charity partners.
                 Engaging for them. Effortless for you.
               </p>
               <a
@@ -152,7 +152,7 @@ export default function Home() {
           </div>
           <div className="hero-tiles reveal">
             <div className="ht"><b>4 weeks</b><span>one self-contained programme</span></div>
-            <div className="ht"><b>1 donation</b><span>guaranteed from day one</span></div>
+            <div className="ht"><b>1 donation</b><span>committed from day one</span></div>
             <div className="ht"><b>3 causes</b><span>the winning team chooses</span></div>
           </div>
         </div>
@@ -176,9 +176,9 @@ export default function Home() {
             actions: cycling in, a meatless lunch, a second-hand find, a weekend
             beach clean. Points build streaks, climb a live leaderboard, and
             turn a quiet office value into something people actually talk about
-            at their desks. At the end, your company makes a real donation to a
-            verified environmental project, and the winning team chooses where
-            it goes. The good gets done either way. They just get to point it.
+            at their desks. At the end, your company makes a real donation to one
+            of our charity partners, and the winning team chooses which one.
+            The good gets done either way. They just get to point it.
           </p>
           <LiveLeaderboard />
         </div>
@@ -252,14 +252,14 @@ export default function Home() {
             <span className="num">02</span>
             <span className="micro">Impact</span>
           </div>
-          <h2 className="reveal">Real effort. Real money. Real impact.</h2>
+          <h2 className="reveal">Real effort. Real money. Real conservation.</h2>
           <p className="lead-p reveal">
-            Every Renyu programme funds verified work on the ground through
-            partners we have vetted ourselves: reforestation, wildlife
-            conservation, and ocean and river cleanup. We only work with
-            projects that have multi-year monitoring and certified results, so
-            the impact you point to is real, not a logo on a website. The
-            donation is guaranteed from the moment you sign on. The competition
+            Every RENYU programme funds work on the ground through registered
+            charities we have chosen ourselves: reforestation, wildlife
+            conservation, and ocean and river cleanup. Each partner publishes
+            its own figures, and we show you the source and the date beside
+            every number rather than inventing our own. The donation is
+            committed from the moment you sign on. The competition
             simply decides which of our partners your people send it to, and
             that single choice turns out to be the most talked-about moment of
             the whole programme.
@@ -267,7 +267,7 @@ export default function Home() {
           <ImpactEarth />
           <div className="pull reveal">
             <p>
-              The good is <span className="g">guaranteed.</span> Your team just
+              The good is <span className="g">committed.</span> Your team just
               gets to choose its shape.
             </p>
           </div>
@@ -473,7 +473,7 @@ export default function Home() {
             <a href="/dpa">Data Processing Agreement</a>
           </div>
           <p className="tg">
-            Renyu. Bring your team together. Leave the planet better.
+            RENYU. Bring your team together. Leave the planet better.
           </p>
         </div>
       </footer>

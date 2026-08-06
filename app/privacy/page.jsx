@@ -1,37 +1,37 @@
 import LegalShell from "../../components/LegalShell";
 
 export const metadata = {
-  title: "Privacy Policy, Renyu",
-  description: "How Renyu collects, uses, and protects personal data.",
+  title: "Privacy Policy, RENYU",
+  description: "How RENYU collects, uses, and protects personal data.",
 };
 
 export default function PrivacyPage() {
   return (
     <LegalShell title="Privacy Policy" updated="13 June 2026">
       <p>
-        This Privacy Policy explains how Renyu (&ldquo;Renyu&rdquo;,
+        This Privacy Policy explains how RENYU (&ldquo;RENYU&rdquo;,
         &ldquo;we&rdquo;, &ldquo;us&rdquo; or &ldquo;our&rdquo;) collects, uses,
         shares and protects personal data when you visit our website, enquire
-        about our programmes, or take part in a Renyu programme through our app.
+        about our programmes, or take part in a RENYU programme through our app.
         We are committed to handling your personal data in line with the UK
         General Data Protection Regulation (UK GDPR) and the Data Protection Act
         2018.
       </p>
       <p>
         <em>
-          Renyu is a trading name. Our registered company name and number will
-          be added here on incorporation. Until then, enquiries can be sent to
-          the contact address below.
+          RENYU is a trading name of RENYU Ltd, a company registered in England
+          and Wales under company number 17324856, with its registered office
+          at 167-169 Great Portland Street, 5th Floor, London W1W 5PF.
         </em>
       </p>
 
       <h2>1. Who we are</h2>
       <p>
-        Renyu provides four-week team engagement programmes for organisations,
+        RENYU provides four-week team engagement programmes for organisations,
         delivered through a mobile and web app, that reward everyday
-        environmental actions and end with a guaranteed donation to a verified
-        environmental partner. For the personal data described in this policy,
-        Renyu is the data controller, except where we act as a processor on
+        environmental actions and end with a donation to a registered charity
+        partner. For the personal data described in this policy,
+        RENYU is the data controller, except where we act as a processor on
         behalf of an employer (see section 9).
       </p>
 
@@ -55,7 +55,7 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>Marketing preferences.</strong> Whether you have asked to hear
-          about the Renyu consumer app or other updates.
+          about the RENYU consumer app or other updates.
         </li>
         <li>
           <strong>Technical data.</strong> Device type, browser, IP address, and
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
           programme.
         </li>
         <li>
-          <strong>To send you updates about the Renyu app</strong> where you
+          <strong>To send you updates about the RENYU app</strong> where you
           have asked us to. Legal basis: consent, which you can withdraw at any
           time.
         </li>
@@ -98,9 +98,9 @@ export default function PrivacyPage() {
         </li>
       </ul>
 
-      <h2>4. The guaranteed donation</h2>
+      <h2>4. The donation</h2>
       <p>
-        Donations made through a Renyu programme are committed by the
+        Donations made through a RENYU programme are committed by the
         participating organisation and directed to one of our vetted
         environmental partners. We share only the information necessary to
         administer and acknowledge the donation. We do not sell personal data to
@@ -111,7 +111,7 @@ export default function PrivacyPage() {
       <h2>5. Who we share data with</h2>
       <ul>
         <li>
-          <strong>Service providers</strong> who help us run Renyu (for example
+          <strong>Service providers</strong> who help us run RENYU (for example
           hosting, database, email delivery and analytics providers), acting as
           our processors under contract.
         </li>
@@ -143,7 +143,9 @@ export default function PrivacyPage() {
         We keep enquiry data for up to 24 months after our last contact, unless
         you become a customer. We keep participation data for the duration of a
         programme and for a reasonable period afterwards to support reporting and
-        the consumer app where you have opted in. We keep records needed for
+        the consumer app where you have opted in. Photographs uploaded as part
+        of an action are deleted automatically on a scheduled basis after a
+        programme ends. We keep records needed for
         legal, tax or accounting purposes for as long as the law requires.
       </p>
 
@@ -157,8 +159,8 @@ export default function PrivacyPage() {
 
       <h2>9. When we act for your employer</h2>
       <p>
-        Where an organisation runs a Renyu programme for its staff, that
-        organisation is the controller for participation data and Renyu acts as a
+        Where an organisation runs a RENYU programme for its staff, that
+        organisation is the controller for participation data and RENYU acts as a
         processor under a data processing agreement. In that case, your
         employer&rsquo;s privacy notice also applies, and requests about your data
         may be directed to them.
