@@ -488,6 +488,7 @@ footer .tg{color:var(--muted);font-size:15px}
 .legal-body h1{font-family:var(--head);font-weight:800;font-size:clamp(34px,6vw,48px);color:var(--ink);margin-bottom:10px;line-height:1.05}
 .legal-updated{font-size:14px;color:var(--muted);margin-bottom:40px}
 .legal-body h2{font-family:var(--head);font-weight:700;font-size:21px;color:var(--green-deep);margin:36px 0 12px}
+.legal-body h3{font-family:var(--head);font-weight:700;font-size:17px;color:var(--ink);margin:24px 0 8px}
 .legal-body p{font-size:16px;line-height:1.7;color:#333;margin-bottom:16px}
 .legal-body ul{margin:0 0 18px;padding-left:22px}
 .legal-body li{font-size:16px;line-height:1.7;color:#333;margin-bottom:10px}

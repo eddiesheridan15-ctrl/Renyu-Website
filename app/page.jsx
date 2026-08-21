@@ -468,6 +468,7 @@ export default function Home() {
             <a href="/story">Our Story</a>
             <a href="#contact">Contact</a>
             <a href="#contact">Book Your Intro Call</a>
+            <a href="/support">Support</a>
             <a href="/privacy">Privacy Policy</a>
             <a href="/terms">Terms of Service</a>
             <a href="/dpa">Data Processing Agreement</a>

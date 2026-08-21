@@ -28,6 +28,8 @@ export default function LegalShell({ title, updated, children }) {
           RENYU. Bring your team together. Leave the planet better.
         </p>
         <p>
+          <a href="/support">Support</a>
+          <span className="legal-dot">&middot;</span>
           <a href="/privacy">Privacy Policy</a>
           <span className="legal-dot">&middot;</span>
           <a href="/terms">Terms of Service</a>
