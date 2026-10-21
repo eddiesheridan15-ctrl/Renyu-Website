@@ -128,16 +128,16 @@ export default function Home() {
             Team competitions today. B Corp certification next.
           </div>
           <h1 className="reveal">
-            Bring your team together. Get B Corp <span className="g">done.</span>
+            B Corp is a <span className="g">team sport.</span>
           </h1>
           <div className="hero-foot">
             <div>
               <p className="lead reveal">
-                RENYU runs friendly team competitions around greener living that
-                end with a company donation to conservation. Next, the same app
-                will split the B Corp certification work across your whole team,
-                so you finish what most companies never do. Engaging for them.
-                Effortless for you.
+                Starting B Corp is easy. Finishing is the hard part. RENYU runs
+                friendly team competitions around greener living that end with a
+                company donation to conservation. Next, the same app will split
+                the certification work across your whole team, so nobody carries
+                it alone. Engaging for them. Effortless for you.
               </p>
               <a
                 href="#contact"
@@ -378,8 +378,8 @@ export default function Home() {
             The competition is phase one. Certification is where it&apos;s going.
           </h2>
           <p className="lead-p reveal">
-            Most companies that start B Corp certification never submit. The
-            work lands on one person, turns into a 200-hour spreadsheet, and
+            Starting B Corp certification is easy. Finishing is the hard part.
+            The work lands on one person, turns into a 200-hour spreadsheet, and
             quietly stops. We&apos;re building the next version of RENYU to fix
             that: the standard broken into small tasks, each routed to the
             person who already has the answer, with the team competition
