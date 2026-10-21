@@ -125,19 +125,19 @@ export default function Home() {
         <div className="stars" />
         <div className="container">
           <div className="micro dim reveal" style={{ marginBottom: 30 }}>
-            Team competitions today. B Corp certification next.
+            Team competitions that get your B Corp work done.
           </div>
           <h1 className="reveal">
-            B Corp is a <span className="g">team sport.</span>
+            B Corp is a <span className="g">team&nbsp;sport.</span>
           </h1>
           <div className="hero-foot">
             <div>
               <p className="lead reveal">
-                Starting B Corp is easy. Finishing is the hard part. RENYU runs
-                friendly team competitions around greener living that end with a
-                company donation to conservation. Next, the same app will split
-                the certification work across your whole team, so nobody carries
-                it alone. Engaging for them. Effortless for you.
+                Starting B Corp is easy. Finishing is the hard part. We&apos;re
+                building the app that splits the certification work across your
+                whole team, so nobody carries it alone. Today, RENYU runs friendly
+                team competitions around greener living that end with a company
+                donation to conservation. Engaging for them. Effortless for you.
               </p>
               <a
                 href="#contact"
@@ -149,12 +149,12 @@ export default function Home() {
               </a>
             </div>
             <div className="hero-side reveal">
-              The competition is live now. The certification platform is in build.
+              Competition live now. Certification platform in build.
             </div>
           </div>
           <div className="hero-tiles reveal">
-            <div className="ht"><b>4 weeks</b><span>one self-contained programme, live now</span></div>
-            <div className="ht"><b>1 donation</b><span>committed from day one</span></div>
+            <div className="ht"><b>Subscription</b><span>one app, one monthly fee, no setup on your side</span></div>
+            <div className="ht"><b>Every quarter</b><span>a share of every fee goes to conservation or prizes</span></div>
             <div className="ht"><b>B Corp</b><span>certification platform in build</span></div>
           </div>
         </div>
@@ -375,7 +375,7 @@ export default function Home() {
             <span className="micro">What&apos;s next</span>
           </div>
           <h2 className="reveal" style={{ maxWidth: "18ch" }}>
-            The competition is phase one. Certification is where it&apos;s going.
+            Phase one is live. Phase two is certification.
           </h2>
           <p className="lead-p reveal">
             Starting B Corp certification is easy. Finishing is the hard part.
@@ -399,10 +399,9 @@ export default function Home() {
               <div className="tick">
                 <b>&#10003;</b> The certification platform is designed and in build.
               </div>
-              <div className="tick">
-                <b>&#10003;</b> If your company is on the B Corp journey and wants to shape it,{" "}
-                <a href="#contact" style={{ color: "var(--green)", textDecoration: "underline", textUnderlineOffset: 4 }}>we&apos;d like to talk</a>.
-              </div>
+              <p style={{ marginTop: 14, marginBottom: 0 }}>
+                On the B Corp journey and want to shape it? <a href="#contact" style={{ color: "var(--green)", textDecoration: "underline", textUnderlineOffset: 4 }}>We&apos;d like to talk</a>.
+              </p>
             </div>
           </div>
         </div>
