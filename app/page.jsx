@@ -1,11 +1,19 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import LeafHero from "../components/LeafHero";
+import AppCarousel from "../components/AppCarousel";
+import BookingForm from "../components/BookingForm";
+import LiveLeaderboard from "../components/LiveLeaderboard";
+import ShareCard from "../components/ShareCard";
+import ImpactEarth from "../components/ImpactEarth";
 
 const Mark = () => (
   <img src="/renyu-badge.png" alt="RENYU" width="256" height="256" />
 );
 
-export default function Story() {
+export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     const io = new IntersectionObserver(
       (es) =>
@@ -17,263 +25,214 @@ export default function Story() {
         }),
       { threshold: 0.14 }
     );
-    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-    return () => io.disconnect();
+    document
+      .querySelectorAll(".reveal,.stagger")
+      .forEach((el) => io.observe(el));
+
+    const nav = document.getElementById("nav");
+    const darkSections = Array.from(
+      document.querySelectorAll('[data-nav="dark"]')
+    );
+    let onScroll;
+    if (nav && darkSections.length) {
+      const NAV_H = 82;
+      onScroll = () => {
+        let onDark = false;
+        for (const el of darkSections) {
+          const r = el.getBoundingClientRect();
+          if (r.top <= NAV_H && r.bottom >= 0) {
+            onDark = true;
+            break;
+          }
+        }
+        nav.classList.toggle("on-dark", onDark);
+      };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll);
+    }
+
+    return () => {
+      io.disconnect();
+      if (onScroll) {
+        window.removeEventListener("scroll", onScroll);
+        window.removeEventListener("resize", onScroll);
+      }
+    };
   }, []);
-
-  const beat = {
-    fontSize: 17,
-    lineHeight: 1.65,
-    color: "var(--ink)",
-    margin: 0,
-  };
-
-  const beatWrap = {
-    paddingBottom: 28,
-    marginBottom: 28,
-    borderBottom: "1px solid rgba(0,0,0,0.08)",
-  };
 
   return (
     <>
       <nav id="nav">
         <div className="nav-in">
-          <a href="/" className="brand" aria-label="Home">
+          <a
+            href="#top"
+            className="brand"
+            aria-label="Back to top"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+              setMenuOpen(false);
+            }}
+          >
             <span className="mark">
               <Mark />
             </span>
             <span>
               <span className="name">RENYU</span>
               <br />
-              <span className="tag">
-                Bring your team together. Leave the planet better.
-              </span>
+              <span className="tag">Bring your team together. Leave the planet better.</span>
             </span>
           </a>
           <div className="nav-links">
-            <a href="/#how">How It Works</a>
-            <a href="/#impact">Impact</a>
-            <a href="/#next">What&apos;s Next</a>
+            <a href="#how">How It Works</a>
+            <a href="#impact">Impact</a>
+            <a href="#next">What&apos;s Next</a>
             <a href="/story">Our Story</a>
-            <a href="/#contact">Contact</a>
-            <a href="/#contact" className="btn">
+            <a href="#contact">Contact</a>
+            <a href="#contact" className="btn">
               <span className="dot" />
               Book Your Intro Call
             </a>
           </div>
+          <button
+            className={`nav-toggle${menuOpen ? " open" : ""}`}
+            aria-label="Menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((o) => !o)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+        <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
+          <a href="#how" onClick={() => setMenuOpen(false)}>How It Works</a>
+          <a href="#impact" onClick={() => setMenuOpen(false)}>Impact</a>
+          <a href="#next" onClick={() => setMenuOpen(false)}>What&apos;s Next</a>
+          <a href="/story" onClick={() => setMenuOpen(false)}>Our Story</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+          <a href="#contact" className="btn" onClick={() => setMenuOpen(false)}>
+            <span className="dot" />
+            Book Your Intro Call
+          </a>
         </div>
       </nav>
 
-      {/* HERO: headline + intro left, landscape photo right */}
-      <section style={{ paddingTop: 150, paddingBottom: 0 }}>
-        <div className="container" style={{ maxWidth: 1180 }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.1fr)",
-              gap: 56,
-              alignItems: "center",
-            }}
-            className="story-hero"
-          >
-            <div>
-              <div className="micro reveal" style={{ marginBottom: 18 }}>
-                Our story
-              </div>
-              <h1
-                className="reveal"
-                style={{
-                  fontFamily: "var(--head)",
-                  fontWeight: 600,
-                  fontSize: "clamp(34px, 5vw, 56px)",
-                  lineHeight: 1.05,
-                  color: "var(--ink)",
-                  marginBottom: 24,
-                }}
-              >
-                Why RENYU exists
-              </h1>
-              <p
-                className="reveal"
-                style={{
-                  fontSize: 20,
-                  lineHeight: 1.7,
-                  color: "var(--ink)",
-                  margin: 0,
-                  maxWidth: 480,
-                }}
-              >
-                Most companies want to do something meaningful for the planet.
-                Most teams also have enough going on without another dry
-                sustainability initiative. RENYU was built for the space
-                between those two realities.
-              </p>
-            </div>
+      <LeafHero />
 
-            <img
-              src="/founder.jpg"
-              alt="Eddie Sheridan in the field"
-              className="reveal"
-              style={{
-                width: "100%",
-                borderRadius: 22,
-                display: "block",
-                objectFit: "cover",
-              }}
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-              }}
-            />
+      <header className="hero" id="top" data-nav="dark">
+        <div className="stars" />
+        <div className="container">
+          <div className="micro dim reveal" style={{ marginBottom: 30 }}>
+            Team competitions that get your B Corp work done.
           </div>
+          <h1 className="reveal">
+            B Corp is a <span className="g">team&nbsp;sport.</span>
+          </h1>
+          <div className="hero-foot">
+            <div>
+              <p className="lead reveal">
+                Starting B Corp is easy. Finishing is the hard part. We&apos;re
+                building the app that splits the certification work across your
+                whole team, so nobody carries it alone. Today, RENYU runs friendly
+                team competitions around greener living that end with a company
+                donation to conservation. Engaging for them. Effortless for you.
+              </p>
+              <a
+                href="#contact"
+                className="btn btn-lg reveal"
+                style={{ marginTop: 36 }}
+              >
+                <span className="dot" />
+                Book a 20-minute intro call
+              </a>
+            </div>
+            <div className="hero-side reveal">
+              Competition live now. Certification platform in build.
+            </div>
+          </div>
+          <div className="hero-tiles reveal">
+            <div className="ht"><b>Subscription</b><span>one app, one monthly fee, no setup on your side</span></div>
+            <div className="ht"><b>Every quarter</b><span>a share of every fee goes to conservation or prizes</span></div>
+            <div className="ht"><b>B Corp</b><span>certification platform in build</span></div>
+          </div>
+        </div>
+        <div className="scroll-cue">
+          <span className="line" />
+          Scroll
+        </div>
+      </header>
+
+      <section id="how">
+        <div className="container">
+          <div className="eyebrow reveal">
+            <span className="num">01</span>
+            <span className="micro">How it works</span>
+          </div>
+          <h2 className="reveal">
+            A bit of healthy competition, for a serious cause.
+          </h2>
+          <p className="lead-p reveal">
+            Over four weeks, your team earns points for everyday eco-conscious
+            actions: cycling in, a meatless lunch, a second-hand find, a weekend
+            beach clean. Points build streaks, climb a live leaderboard, and
+            turn a quiet office value into something people actually talk about
+            at their desks. At the end, your company makes a real donation to one
+            of our charity partners, and the winning team chooses which one.
+            The good gets done either way. They just get to point it.
+          </p>
+          <LiveLeaderboard />
         </div>
       </section>
 
-      {/* DIVIDER */}
-      <div className="container" style={{ maxWidth: 1180 }}>
-        <div
-          className="reveal"
-          style={{
-            borderTop: "1px solid rgba(0,0,0,0.10)",
-            marginTop: 44,
-            marginBottom: 44,
-          }}
-        />
-      </div>
-
-      {/* BODY: story beats left (in order), close right aligned to conclusion */}
-      <section style={{ paddingTop: 0, paddingBottom: 72 }}>
-        <div className="container" style={{ maxWidth: 1180 }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)",
-              gap: 64,
-              alignItems: "end",
-            }}
-            className="story-body"
-          >
-            {/* LEFT: four beats in narrative order, no labels */}
-            <div className="reveal">
-              <div style={beatWrap}>
-                <p style={beat}>
-                  The idea came during a year spent moving through some of the
-                  most naturally rich places I&apos;d ever seen: Patagonia, the
-                  Amazon, Tayrona Park on Colombia&apos;s coast, and
-                  Botswana&apos;s Mashatu reserve. It made the natural world
-                  feel less like an abstract cause and more like something
-                  living, beautiful and worth protecting.
-                </p>
+      {/* BUILT TO BE PLAYED, leaf-vein diptych */}
+      <section id="built" className="built">
+        <div className="container">
+          <div className="frame reveal">
+            <div className="left">
+              <div className="bg" />
+              <div className="grade" />
+              <div className="grade2" />
+              <div>
+                <span className="tag">The mechanics</span>
+                <h2>Built to be played, not endured.</h2>
               </div>
-              <div style={beatWrap}>
-                <p style={beat}>
-                  My background is not conservation work. I trained as a
-                  mechanical engineer, then spent years in talent and brand
-                  partnerships. I liked the craft, but I didn&apos;t feel
-                  fulfilled: my passion had always been the planet, I just
-                  hadn&apos;t found my way in yet. The question I kept circling
-                  was a simple one. How do I spend my life on the thing I
-                  actually love, and leave the world a little better than I
-                  found it? How do I make the ten-year-old who watched David
-                  Attenborough every week proud of where he ended up?
-                </p>
-              </div>
-              <div style={beatWrap}>
-                <p style={beat}>
-                  Last year, my dad and I worked with a team to try to get a
-                  million trees funded for planting in Africa. It didn&apos;t
-                  happen. Not because people didn&apos;t care, but because
-                  caring, on its own, doesn&apos;t move fast enough or far
-                  enough. Good intentions need a structure.
-                </p>
-              </div>
-              <div
-                style={{
-                  ...beatWrap,
-                  borderBottom: "none",
-                  marginBottom: 0,
-                  paddingBottom: 0,
-                }}
-              >
-                <p style={beat}>
-                  So I started building that structure instead: a team
-                  competition inside companies, backed by a real donation to
-                  charities protecting land, wildlife and water. Then I asked
-                  myself where it goes after the competition ends, and the
-                  answer was nowhere. A competition changes a month.
-                  Certification changes a company. So that&apos;s where RENYU
-                  is going: B Corp certification broken into small tasks across
-                  the whole team, with the competition running alongside so
-                  nobody carries it alone.
-                </p>
-              </div>
+              <p className="foot">
+                It looks and feels like an app your team actually wants to open,
+                not a chore they are told to finish.
+              </p>
             </div>
-
-            {/* RIGHT: the close, bottom-aligned to sit against the conclusion */}
-            <div
-              className="reveal"
-              style={{
-                background: "rgba(0,0,0,0.02)",
-                border: "1px solid rgba(0,0,0,0.07)",
-                borderRadius: 22,
-                padding: "36px 44px 40px",
-              }}
-            >
-              <div
-                style={{
-                  borderLeft: "3px solid var(--green)",
-                  paddingLeft: 26,
-                }}
-              >
-                <p
-                  style={{
-                    fontSize: 17,
-                    lineHeight: 1.6,
-                    color: "var(--ink)",
-                    margin: "0 0 26px",
-                  }}
-                >
-                  The goal isn&apos;t to help companies look like they care.
-                  It&apos;s to help them do something real, and bring their
-                  people with them.
-                </p>
-                <p
-                  style={{
-                    fontFamily: "var(--head)",
-                    fontWeight: 600,
-                    fontSize: "clamp(26px, 3vw, 34px)",
-                    lineHeight: 1.25,
-                    color: "var(--green-deep)",
-                    margin: "0 0 26px",
-                  }}
-                >
-                  Teams come together and the planet gets a bit of itself back.
-                </p>
-                <div
-                  style={{
-                    borderTop: "1px solid rgba(0,0,0,0.10)",
-                    paddingTop: 24,
-                  }}
-                >
-                  <p
-                    style={{
-                      fontSize: 16,
-                      lineHeight: 1.6,
-                      color: "var(--ink)",
-                      margin: "0 0 22px",
-                    }}
-                  >
-                    RENYU comes from <em>renew</em>. That is the mission behind
-                    everything we build.
+            <div className="right">
+              <div className="item">
+                <span className="num">01</span>
+                <div>
+                  <h3>Compete</h3>
+                  <p>
+                    Department against department, or everyone for the top spot
+                    in smaller teams. A live leaderboard keeps it loud all the
+                    way to the finish.
                   </p>
-                  <p
-                    style={{
-                      fontFamily: "var(--head)",
-                      fontWeight: 600,
-                      color: "var(--green-deep)",
-                      margin: 0,
-                    }}
-                  >
-                    &mdash; Eddie Sheridan, Founder
+                </div>
+              </div>
+              <div className="item">
+                <span className="num">02</span>
+                <div>
+                  <h3>Level up</h3>
+                  <p>
+                    Every action grows a personal score and unlocks new tiers.
+                    Small wins early, real bragging rights by the end.
+                  </p>
+                </div>
+              </div>
+              <div className="item">
+                <span className="num">03</span>
+                <div>
+                  <h3>Learn as you go</h3>
+                  <p>
+                    A light weekly read shows the team easy, genuine ways to
+                    live a little greener, with no lectures and nothing they
+                    have to buy.
                   </p>
                 </div>
               </div>
@@ -282,22 +241,251 @@ export default function Story() {
         </div>
       </section>
 
-      <section className="closing" data-nav="dark" style={{ marginTop: 30 }}>
-        <div className="container" style={{ maxWidth: 880 }}>
-          <h2 className="reveal">Want your company to be part of it?</h2>
+      <section style={{ paddingTop: 0, paddingBottom: 24 }}>
+        <div className="container">
+          <h2 className="carousel-head reveal">A look inside the app</h2>
+          <AppCarousel />
+        </div>
+      </section>
+
+      <section id="impact">
+        <div className="container">
+          <div className="eyebrow reveal">
+            <span className="num">02</span>
+            <span className="micro">Impact</span>
+          </div>
+          <h2 className="reveal">Real effort. Real money. Real impact.</h2>
           <p className="lead-p reveal">
-            A subscription your team will actually enjoy, a share of every fee
-            to conservation, and a certification platform in build. If
-            you&apos;re on the B Corp journey, let&apos;s talk.
+            Every RENYU programme funds real work on the ground through
+            partners we have vetted ourselves: reforestation, wildlife
+            conservation, and ocean and river cleanup. We only work with
+            projects that have multi-year monitoring and published results, so
+            the impact you point to is real, not a logo on a website. The
+            donation is committed from the moment you sign on. The competition
+            simply decides which of our partners your people send it to, and
+            that single choice turns out to be the most talked-about moment of
+            the whole programme.
+          </p>
+          <ImpactEarth />
+          <div className="pull reveal">
+            <p>
+              The good is <span className="g">committed.</span> Your team just
+              gets to choose its shape.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* PHOTO PLUNGE */}
+      <section className="plunge" data-nav="dark">
+        <img className="plunge-img" src="/plunge-forest.jpg" alt="Sunlight through a forest canopy seen from below" />
+        <div className="plunge-grad" />
+        <div className="plunge-inner">
+          <h2 className="reveal">
+            Four weeks of competition.
+            <br />
+            <span>A patch of the planet, repaired.</span>
+          </h2>
+        </div>
+      </section>
+
+      <section className="verify" data-nav="dark">
+        <div className="container">
+          <div className="v-eyebrow reveal">[&nbsp;&nbsp;How we keep it honest&nbsp;&nbsp;]</div>
+          <h2 className="reveal">If we can&apos;t verify it, we don&apos;t fund it.</h2>
+          <div className="v-grid reveal">
+            <div className="v-tile">
+              <h3>Multi-year monitoring</h3>
+              <p>Every project we fund is tracked for years, not months. Planting day is the start, not the photo op.</p>
+            </div>
+            <div className="v-tile">
+              <h3>Published standards</h3>
+              <p>Our partners publish their own results and report them openly, so the numbers stand up outside this website.</p>
+            </div>
+            <div className="v-tile">
+              <h3>Locked in at signing</h3>
+              <p>The donation is committed before the first point is scored. The competition decides where, never whether.</p>
+            </div>
+            <div className="v-tile">
+              <h3>Vetted by us</h3>
+              <p>Registered charities and non-profits we have checked ourselves, not logos licensed for a landing page.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SHARE LOOP (film section returns here post-launch) */}
+      <section style={{ paddingTop: 88 }}>
+        <div className="container">
+          <div className="share-row">
+            <div className="share-copy">
+              <div className="share-eyebrow reveal">[&nbsp;&nbsp;The proof&nbsp;&nbsp;]</div>
+              <h2 className="reveal" style={{ maxWidth: "15ch" }}>
+                You walk away with something worth sharing.
+              </h2>
+              <p className="lead-p reveal" style={{ marginBottom: 0 }}>
+                When the donation lands, your people do the telling. Real posts
+                from real employees: the team&apos;s win, the project it funded,
+                the company that made it happen. A values story your company can
+                actually show, not just claim.
+              </p>
+            </div>
+            <div className="share-card-col">
+              <ShareCard />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ paddingTop: 0 }}>
+        <div className="container">
+          <h2 className="reveal" style={{ maxWidth: "16ch" }}>
+            The hardest part is telling your team it is starting.
+          </h2>
+          <p className="lead-p reveal">
+            Plenty of companies try to run something like this in-house, then
+            quietly drop it when they realise the admin becomes someone&apos;s
+            full-time job. That someone is us. We handle the setup, the platform,
+            the verification, and the donation. You bring your team and a date to
+            start.
+          </p>
+          <div className="callout reveal">
+            <span className="ic">
+              <Mark />
+            </span>
+            <div>
+              <h3>One simple app your team will actually want to open.</h3>
+              <div className="tick">
+                <b>&#10003;</b> We handle setup, verification, and the donation.
+              </div>
+              <div className="tick">
+                <b>&#10003;</b> One point of contact, from kickoff to wrap-up.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* WHAT'S NEXT */}
+      <section id="next">
+        <div className="container">
+          <div className="eyebrow reveal">
+            <span className="num">03</span>
+            <span className="micro">What&apos;s next</span>
+          </div>
+          <h2 className="reveal" style={{ maxWidth: "18ch" }}>
+            Phase one is live. Phase two is certification.
+          </h2>
+          <p className="lead-p reveal">
+            Starting B Corp certification is easy. Finishing is the hard part.
+            The work lands on one person, turns into a 200-hour spreadsheet, and
+            quietly stops. We&apos;re building the next version of RENYU to fix
+            that: the standard broken into small tasks, each routed to the
+            person who already has the answer, with the team competition
+            running alongside so nobody is doing it alone. The software drafts
+            the admin. A certified B Leader reviews everything before it goes
+            anywhere.
+          </p>
+          <div className="callout reveal">
+            <span className="ic">
+              <Mark />
+            </span>
+            <div>
+              <h3>Where we are, honestly.</h3>
+              <div className="tick">
+                <b>&#10003;</b> The competition app is live on iOS and Android.
+              </div>
+              <div className="tick">
+                <b>&#10003;</b> The certification platform is designed and in build.
+              </div>
+              <p style={{ marginTop: 14, marginBottom: 0 }}>
+                On the B Corp journey and want to shape it? <a href="#contact" style={{ color: "var(--green)", textDecoration: "underline", textUnderlineOffset: 4 }}>We&apos;d like to talk</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* A NOTE FROM THE FOUNDER */}
+      <section id="founder" style={{ paddingTop: 8 }}>
+        <div className="container" style={{ maxWidth: 880 }}>
+          <div className="micro reveal" style={{ marginBottom: 18 }}>
+            A note from the founder
+          </div>
+          <p
+            className="lead-p reveal"
+            style={{ fontSize: 26, lineHeight: 1.55, color: "var(--ink)", maxWidth: 760 }}
+          >
+            Most companies I meet genuinely want to help the planet and have no
+            idea where to start without it turning into a chore. I built RENYU
+            because I got tired of watching good intentions, including my own,
+            go nowhere.
+          </p>
+          <p
+            className="reveal"
+            style={{
+              marginTop: 22,
+              fontFamily: "var(--head)",
+              fontWeight: 600,
+              color: "var(--green-deep)",
+            }}
+          >
+            &mdash; Eddie Sheridan, Founder
+            <a
+              href="/story"
+              style={{
+                marginLeft: 18,
+                fontWeight: 600,
+                color: "var(--green)",
+                textDecoration: "underline",
+                textUnderlineOffset: 4,
+              }}
+            >
+              Read the full story
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <section className="closing" data-nav="dark">
+        <div className="container" style={{ maxWidth: 880 }}>
+          <div className="micro reveal">Founding programmes open now</div>
+          <h2 className="reveal">
+            Give your team something good to compete over.
+          </h2>
+          <p className="lead-p reveal">
+            We are taking on a small number of founding programmes now. If your
+            company already cares about this and you want a culture win with real
+            impact behind it, let&apos;s talk.
           </p>
           <a
-            href="/#contact"
+            href="#contact"
             className="btn btn-lg reveal"
             style={{ background: "var(--green)" }}
           >
             <span className="dot" style={{ background: "#fff" }} />
             Book a 20-minute intro call
           </a>
+          <p className="sub reveal">
+            A quick chat to see if it is a fit. No deck, no pressure.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div className="container">
+          <div className="form-wrap">
+            <div className="form-head">
+              <h2 className="reveal">Book your intro call</h2>
+              <p className="reveal">
+                Tell us a little about your team and we&apos;ll find a time.
+              </p>
+            </div>
+            <div className="reveal">
+              <BookingForm />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -313,17 +501,17 @@ export default function Story() {
             <span>
               <span className="name">RENYU</span>
               <br />
-              <span className="tag">
-                Bring your team together. Leave the planet better.
-              </span>
+              <span className="tag">Bring your team together. Leave the planet better.</span>
             </span>
           </div>
           <div className="foot-links">
-            <a href="/#how">How It Works</a>
-            <a href="/#impact">Impact</a>
-            <a href="/#next">What&apos;s Next</a>
+            <a href="#how">How It Works</a>
+            <a href="#impact">Impact</a>
+            <a href="#next">What&apos;s Next</a>
             <a href="/story">Our Story</a>
-            <a href="/#contact">Contact</a>
+            <a href="#contact">Contact</a>
+            <a href="#contact">Book Your Intro Call</a>
+            <a href="/support">Support</a>
             <a href="/privacy">Privacy Policy</a>
             <a href="/terms">Terms of Service</a>
             <a href="/dpa">Data Processing Agreement</a>
@@ -333,21 +521,6 @@ export default function Story() {
           </p>
         </div>
       </footer>
-
-      <style>{`
-        @media (max-width: 860px) {
-          .story-hero {
-            grid-template-columns: 1fr !important;
-            gap: 28px !important;
-          }
-          .story-hero img { order: 2; }
-          .story-body {
-            grid-template-columns: 1fr !important;
-            gap: 36px !important;
-            align-items: stretch !important;
-          }
-        }
-      `}</style>
     </>
   );
 }

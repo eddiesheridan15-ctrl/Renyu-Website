@@ -53,6 +53,7 @@ export default function Story() {
           <div className="nav-links">
             <a href="/#how">How It Works</a>
             <a href="/#impact">Impact</a>
+            <a href="/#next">What&apos;s Next</a>
             <a href="/story">Our Story</a>
             <a href="/#contact">Contact</a>
             <a href="/#contact" className="btn">
@@ -194,10 +195,15 @@ export default function Story() {
                 }}
               >
                 <p style={beat}>
-                  So I started building that structure instead. RENYU runs
-                  four-week competitions inside companies: the company backs it
-                  with a real donation, and charities protecting land, wildlife and
-                  water get funded.
+                  So I started building that structure instead: a team
+                  competition inside companies, backed by a real donation to
+                  charities protecting land, wildlife and water. Then I asked
+                  myself where it goes after the competition ends, and the
+                  answer was nowhere. A competition changes a month.
+                  Certification changes a company. So that&apos;s where RENYU
+                  is going: B Corp certification broken into small tasks across
+                  the whole team, with the competition running alongside so
+                  nobody carries it alone.
                 </p>
               </div>
             </div>
@@ -280,8 +286,9 @@ export default function Story() {
         <div className="container" style={{ maxWidth: 880 }}>
           <h2 className="reveal">Want your company to be part of it?</h2>
           <p className="lead-p reveal">
-            A four-week competition your team will actually enjoy, and a real
-            donation to a registered charity at the end of it.
+            A subscription your team will actually enjoy, a share of every fee
+            to conservation, and a certification platform in build. If
+            you&apos;re on the B Corp journey, let&apos;s talk.
           </p>
           <a
             href="/#contact"
@@ -314,6 +321,7 @@ export default function Story() {
           <div className="foot-links">
             <a href="/#how">How It Works</a>
             <a href="/#impact">Impact</a>
+            <a href="/#next">What&apos;s Next</a>
             <a href="/story">Our Story</a>
             <a href="/#contact">Contact</a>
             <a href="/privacy">Privacy Policy</a>
@@ -321,7 +329,7 @@ export default function Story() {
             <a href="/dpa">Data Processing Agreement</a>
           </div>
           <p className="tg">
-            RENYU. Bring your team together. Leave the planet better.
+            Team competitions that fund conservation, and a platform in build that gets your company B Corp certified by sharing the work across your whole team.
           </p>
         </div>
       </footer>
