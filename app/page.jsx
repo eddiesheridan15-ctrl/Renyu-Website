@@ -87,6 +87,7 @@ export default function Home() {
           <div className="nav-links">
             <a href="#how">How It Works</a>
             <a href="#impact">Impact</a>
+            <a href="#next">What&apos;s Next</a>
             <a href="/story">Our Story</a>
             <a href="#contact">Contact</a>
             <a href="#contact" className="btn">
@@ -108,6 +109,7 @@ export default function Home() {
         <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
           <a href="#how" onClick={() => setMenuOpen(false)}>How It Works</a>
           <a href="#impact" onClick={() => setMenuOpen(false)}>Impact</a>
+          <a href="#next" onClick={() => setMenuOpen(false)}>What&apos;s Next</a>
           <a href="/story" onClick={() => setMenuOpen(false)}>Our Story</a>
           <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
           <a href="#contact" className="btn" onClick={() => setMenuOpen(false)}>
@@ -123,19 +125,19 @@ export default function Home() {
         <div className="stars" />
         <div className="container">
           <div className="micro dim reveal" style={{ marginBottom: 30 }}>
-            A four-week team competition
+            Team competitions today. B Corp certification next.
           </div>
           <h1 className="reveal">
-            Real team-building. <span className="g">Real</span> environmental
-            impact.
+            Bring your team together. Get B Corp <span className="g">done.</span>
           </h1>
           <div className="hero-foot">
             <div>
               <p className="lead reveal">
-                A friendly four-week competition that brings your team together,
-                turns everyday actions into real environmental impact, and ends with a
-                company donation to one of our charity partners. Engaging for
-                them. Effortless for you.
+                RENYU runs friendly team competitions around greener living that
+                end with a company donation to conservation. Next, the same app
+                will split the B Corp certification work across your whole team,
+                so you finish what most companies never do. Engaging for them.
+                Effortless for you.
               </p>
               <a
                 href="#contact"
@@ -147,13 +149,13 @@ export default function Home() {
               </a>
             </div>
             <div className="hero-side reveal">
-              No setup work on your side. We run the whole thing.
+              The competition is live now. The certification platform is in build.
             </div>
           </div>
           <div className="hero-tiles reveal">
-            <div className="ht"><b>4 weeks</b><span>one self-contained programme</span></div>
+            <div className="ht"><b>4 weeks</b><span>one self-contained programme, live now</span></div>
             <div className="ht"><b>1 donation</b><span>committed from day one</span></div>
-            <div className="ht"><b>3 causes</b><span>the winning team chooses</span></div>
+            <div className="ht"><b>B Corp</b><span>certification platform in build</span></div>
           </div>
         </div>
         <div className="scroll-cue">
@@ -365,6 +367,47 @@ export default function Home() {
       </section>
 
 
+      {/* WHAT'S NEXT */}
+      <section id="next">
+        <div className="container">
+          <div className="eyebrow reveal">
+            <span className="num">03</span>
+            <span className="micro">What&apos;s next</span>
+          </div>
+          <h2 className="reveal" style={{ maxWidth: "18ch" }}>
+            The competition is phase one. Certification is where it&apos;s going.
+          </h2>
+          <p className="lead-p reveal">
+            Most companies that start B Corp certification never submit. The
+            work lands on one person, turns into a 200-hour spreadsheet, and
+            quietly stops. We&apos;re building the next version of RENYU to fix
+            that: the standard broken into small tasks, each routed to the
+            person who already has the answer, with the team competition
+            running alongside so nobody is doing it alone. The software drafts
+            the admin. A certified B Leader reviews everything before it goes
+            anywhere.
+          </p>
+          <div className="callout reveal">
+            <span className="ic">
+              <Mark />
+            </span>
+            <div>
+              <h3>Where we are, honestly.</h3>
+              <div className="tick">
+                <b>&#10003;</b> The competition app is live on iOS and Android.
+              </div>
+              <div className="tick">
+                <b>&#10003;</b> The certification platform is designed and in build.
+              </div>
+              <div className="tick">
+                <b>&#10003;</b> If your company is on the B Corp journey and wants to shape it,{" "}
+                <a href="#contact" style={{ color: "var(--green)", textDecoration: "underline", textUnderlineOffset: 4 }}>we&apos;d like to talk</a>.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* A NOTE FROM THE FOUNDER */}
       <section id="founder" style={{ paddingTop: 8 }}>
         <div className="container" style={{ maxWidth: 880 }}>
@@ -465,6 +508,7 @@ export default function Home() {
           <div className="foot-links">
             <a href="#how">How It Works</a>
             <a href="#impact">Impact</a>
+            <a href="#next">What&apos;s Next</a>
             <a href="/story">Our Story</a>
             <a href="#contact">Contact</a>
             <a href="#contact">Book Your Intro Call</a>
@@ -474,7 +518,7 @@ export default function Home() {
             <a href="/dpa">Data Processing Agreement</a>
           </div>
           <p className="tg">
-            RENYU. Bring your team together. Leave the planet better.
+            Team competitions that fund conservation, and a platform in build that gets your company B Corp certified by sharing the work across your whole team.
           </p>
         </div>
       </footer>
