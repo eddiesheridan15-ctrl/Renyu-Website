@@ -90,7 +90,7 @@ nav.on-dark .mobile-menu a:not(.btn){color:#eaf3ec;border-bottom-color:rgba(255,
 .scroll-cue .line{width:1px;height:38px;background:linear-gradient(#9fb5a6,transparent);animation:cue 2s ease-in-out infinite}
 @keyframes cue{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
 
-section{padding:70px 0;position:relative;z-index:2;background:var(--cream)}
+section{padding:70px 0;position:relative;z-index:2;background:var(--cream);scroll-margin-top:100px}
 h2{font-size:clamp(38px,6vw,84px);font-weight:800;letter-spacing:-.035em}
 .lead-p{font-size:22px;color:var(--muted);max-width:820px;line-height:1.62;margin-top:14px}
 .eyebrow{display:flex;align-items:baseline;gap:16px;margin-bottom:26px}
